@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mystery Word</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h3>Mystery Word</h3>
+    <p>You have <u>{{guesses}}</u> guesses left.</p>
+  </div>
+  <div class="main">
+    <div class="Right-on">
+        {{#gameWord}}
+      {{.}}
+      {{/gameWord}}
+    </div>
+    <div class="entry">
+      <form action="/" method="post">
+        <input type="text" maxlength="1" name="letter" value="" placeholder="Type one letter...">
+        <button type="submit" name="check">Check Letter</button>
+      </form>
+    </div>
+    <div class="wrong-oh">
+      Letters guessed: {{guessedLetter}}
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

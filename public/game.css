@@ -1,0 +1,39 @@
+{
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+}
+.letter {
+    display: inline-block;
+    list-style: none;
+    width: 20px;
+    margin: 0 5px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    color: white;
+}
+.main {
+  background: linear-gradient(to right, #606060, #C0C0C0);
+  border: solid 2px;
+  border-color: white;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+ .Right-on {
+   margin: 0 auto;
+   padding: 15px;
+ }
+ .entry{
+   margin: 0 auto;
+ }
+ .wrong-oh {
+   margin: 0 auto;
+   padding: 15px;
+ }
+button {
+  box-shadow: 5px 5px 5px black;
+}
