@@ -1,3 +1,4 @@
+const fs = require ('fs');
 const express = require('express')
 const session = require('express-session')
 const bodyParser = require('body-parser')
@@ -7,8 +8,8 @@ const words = fs.readFileSync("/usr/share/dict/words", "utf-8").toLowerCase().sp
 const app = express()
 
 app.engine('mustache', mustacheExpress())
-app.set('views', './views')
-app.set('view egine', 'mustache')
+app.set('Views', __dirname + '/Views')
+app.set('view engine', 'mustache')
 
 app.use(express.static('public'));
 
@@ -33,8 +34,8 @@ let hangMan = {
 
 app.get('/', function(req, res){
   hangMan.gameWord = wordPlacement(hangMan.word, hangMan.guessedLetter);
-    res.render("main", hangMan);
-    console.log(hangMan);
+    res.render("index", hangMan);
+    console.log('this is', hangMan);
   });
 
 
@@ -51,8 +52,8 @@ app.post('/', function(req, res){
 });
 
 function newWord(){
-  let newWord = word[Math.floor(Math.random()*word.length)];
-  return word;
+  let newWord = words[Math.floor(Math.random()*words.length)];
+  return newWord;
 }
 
 function wordPlacement(word, letters){
@@ -84,10 +85,10 @@ function newGame(){
   };
   return newGame;
 }
-
-app.get("/", function (req,res){
-  res.render("main");
-})
+//
+// app.get("/", function (req,res){
+//   res.render("game");
+// })
 
 app.listen(3000, function() {
   console.log('Let\'s play Hang Man!!!');
