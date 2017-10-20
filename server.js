@@ -29,7 +29,7 @@ let hangMan = {
     gameWord: [],
     guessedLetter: [],
     guesses: 8,
-    message: ''
+    message: 'you are smart'
 }
 
 app.get('/', function(req, res){
@@ -81,15 +81,15 @@ function newGame(){
     gameWord: [],
     guessedLetter: [],
     guesses: 8,
-    message: ''
+    message: 'You are a regular word smith'
   };
   return newGame;
 }
-//
-// app.get("/", function (req,res){
-//   res.render("game");
-// })
+
+ app.get("/", function (req,res){
+      res.render("game");
+ })
 
 app.listen(3000, function() {
-  console.log('Let\'s play Hang Man!!!');
+  console.log('Let\'s play Mystery Word!!!');
 });
